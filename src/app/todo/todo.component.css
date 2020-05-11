@@ -1,0 +1,35 @@
+.todo-list{
+  margin-top: 50px;
+}
+
+.todo-list .card{
+  border: none;
+  margin-top: 5px;
+  background-color: #f8f8f8;
+}
+
+.todo-tools{
+  display: none;
+}
+
+.todo-tools i {
+  margin: 0px 5px;
+  cursor: pointer;
+}
+
+.todo-list .card:hover {
+  cursor: pointer;
+  width: 600px;
+  height: 80px;
+  margin-left: -30px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.todo-list .card:hover .todo-tools {
+  display: inline;
+}
+
+i {
+  margin-right: 20px;
+}

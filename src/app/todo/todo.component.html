@@ -1,0 +1,53 @@
+<div class="row justify-content-center md-3">
+  <div class="col-md-4 text-center">
+    <h1>TODOS </h1>
+    <p class="text-info">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+      <form #f="ngForm" (ngSubmit)=' f.form.valid && onSubmit(f)'  class="form-inline">
+        <div class="col-md-10 form-group">
+          <input type="text" placeholder="Add New Todos here" name="todoText" class=" form-control-plaintext drop-shadow"   [(ngModel)] = 'todoValue' required #todo = 'ngModel' [ngClass] = "{'border-danger': f.submitted && todo.invalid }">
+        </div>
+        <button type="submit" class="btn btn-primary col-md-2 btn-block drop-shadow btn-todo"> {{ dataStatus }} </button>
+
+        <div class="text-danger ml-3" *ngIf = 'f.submitted && todo.invalid && todo.errors.required' >
+          Category is Required ..
+        </div>
+
+      </form>
+  </div>
+</div>
+
+<div class="row justify-content-center todo-list">
+  <div class="col-md-6">
+    <div class="card" *ngFor = 'let todo of todos'>
+      <div class="card-body">
+        <div class="clearfix">
+          <div class="float-left text-secondary">
+            <i class="far fa-circle text-danger"></i>
+            <i class="fas fa-check text-success"></i>
+            {{ todo.data.todo }}
+          </div>
+
+          <div class="float-right">
+            <i class="far fa-check-circle text-success"></i>
+            <i class="far fa-times-circle text-danger"></i>
+            <div class="todo-tools">
+              <small>
+              <i class="fas fa-pencil-alt text-warning"  (click) = 'onEdit(todo.data.todo, todo.id)'></i>
+              <i class="fas fa-trash text-danger" (click) = 'onDelete( todo.id )'></i>
+              </small>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

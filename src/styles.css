@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+  background-image: url('./assets/Bckground.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.drop-shadow{
+  -webkit-box-shadow: 0px 0px 33px -10px rgba(71, 114, 254, 0.3);
+  -moz-box-shadow: 0px 0px 33px -10px rgba(71, 114, 254, 0.3);
+  box-shadow: 0px 0px 33px -10px rgba(71, 114, 254, 0.3);
+}
+
+input[type = text]{
+  background-color: #fefefe;
+  height: 60px;
+  padding-left: 20px;
+
+}
+
+.btn-todo{
+  height: 60px!important;
+  background-color: #e9eeff!important;
+  color: #4772fe!important;
+  border: none!important;
+
+}
+
+.border-danger {
+  border: 1px solid red !important;
+}

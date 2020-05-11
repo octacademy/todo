@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "todo-16fd6": {
+      "hosting": {
+        "todo": [
+          "todo-16fd6"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+header {
+  height: 100px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+
+}
+
+.brand {
+  background-color: #f3f6ff;
+  padding: 10px 50px;
+  border-radius: 50px;
+  cursor: pointer;
+}
