@@ -51,7 +51,29 @@ export class TodoService {
 
     this.afs.collection('categories').doc(catId).collection('todos').doc(todoId).delete().then(() => {
 
+      this.afs.doc('categories/' + catId).update({todoCount: firestore.FieldValue.increment(-1)});
       this.toastr.error('Todo Deleted Successfully');
+
+  })
+
+  }
+
+
+  markComplete( catId: string, todoId: string) {
+
+    this.afs.collection('categories').doc(catId).collection('todos').doc(todoId).update({isCompleted: true }).then(() => {
+
+      this.toastr.info('Todo Marked Completed');
+
+  })
+
+  }
+
+  markUncomplete( catId: string, todoId: string) {
+
+    this.afs.collection('categories').doc(catId).collection('todos').doc(todoId).update({isCompleted: false }).then(() => {
+
+      this.toastr.warning('Todo Marked Uncompleted');
 
   })
 

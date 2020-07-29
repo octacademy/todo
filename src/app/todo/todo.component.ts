@@ -68,4 +68,16 @@ export class TodoComponent implements OnInit {
 
    }
 
+   completeTodo (todoId: string) {
+
+    this.todoService.markComplete(this.catId, todoId);
+
+   }
+
+   uncompleteTodo (todoId: string) {
+
+    this.todoService.markUncomplete(this.catId, todoId);
+
+   }
+
 }

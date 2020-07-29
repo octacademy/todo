@@ -29,14 +29,15 @@
       <div class="card-body">
         <div class="clearfix">
           <div class="float-left text-secondary">
-            <i class="far fa-circle text-danger"></i>
-            <i class="fas fa-check text-success"></i>
+            <i class="far fa-circle text-danger" *ngIf = '!todo.data.isCompleted'></i>
+            <i class="fas fa-check text-success" *ngIf = 'todo.data.isCompleted'></i>
             {{ todo.data.todo }}
+            <hr *ngIf = 'todo.data.isCompleted'>
           </div>
 
           <div class="float-right">
-            <i class="far fa-check-circle text-success"></i>
-            <i class="far fa-times-circle text-danger"></i>
+            <i class="far fa-check-circle text-success" (click) = 'completeTodo(todo.id)' *ngIf = '!todo.data.isCompleted'></i>
+            <i class="far fa-times-circle text-danger" (click) = 'uncompleteTodo(todo.id)' *ngIf = 'todo.data.isCompleted'></i>
             <div class="todo-tools">
               <small>
               <i class="fas fa-pencil-alt text-warning"  (click) = 'onEdit(todo.data.todo, todo.id)'></i>

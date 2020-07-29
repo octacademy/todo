@@ -18,6 +18,9 @@ export class CategoryComponent implements OnInit {
 
   catId: string;
 
+
+
+
   constructor( private categoryService: CategoryService) { }
 
   ngOnInit(): void {
